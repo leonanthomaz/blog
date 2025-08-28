@@ -1,3 +1,4 @@
+// src/data/blogPosts.ts
 import firecloudLogo from '@/assets/img/firecloud-logo-azul.png';
 
 export interface BlogPost {
@@ -7,7 +8,6 @@ export interface BlogPost {
   subtitle: string;
   content: string;
   date: string;
-  readTime: string;
   category: string;
   slug: string;
   image: string;
@@ -36,7 +36,6 @@ result = arr**2
 \`\`\`
 `,
     date: "2025-08-27",
-    readTime: "8 min read",
     category: "Algoritmos",
     slug: "otimizando-algoritmos-com-python",
     image: firecloudLogo,
@@ -70,7 +69,6 @@ def scrape(url):
 \`\`\`
 `,
     date: "2025-08-27",
-    readTime: "10 min read",
     category: "Web Scraping",
     slug: "web-scraping-python",
     image: firecloudLogo,
@@ -94,7 +92,6 @@ for filename in os.listdir("./docs"):
 \`\`\`
 `,
     date: "2025-08-27",
-    readTime: "7 min read",
     category: "Automação",
     slug: "automacao-python",
     image: firecloudLogo,
@@ -120,7 +117,6 @@ print(clf.predict(X[:5]))
 \`\`\`
 `,
     date: "2025-08-27",
-    readTime: "12 min read",
     category: "Inteligência Artificial",
     slug: "ia-python-introducao",
     image: firecloudLogo,
@@ -144,7 +140,6 @@ driver.quit()
 \`\`\`
 `,
     date: "2025-08-27",
-    readTime: "9 min read",
     category: "Automação",
     slug: "bots-automacao-web",
     image: firecloudLogo,

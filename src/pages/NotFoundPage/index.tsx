@@ -1,126 +1,64 @@
-import React from 'react';
-import { 
-  Box, 
-  Stack, 
-  Typography, 
-  Button,
-  useMediaQuery, 
-  useTheme 
+import {
+  Container,
+  Box,
+  Stack,
+  Typography,
+  Button
 } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
+import { ErrorOutline } from '@mui/icons-material';
 
 const NotFoundPage: React.FC = () => {
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
   const navigate = useNavigate();
 
   return (
-    <Box
+    <Container
+      maxWidth="md"
       sx={{
+        py: 8,
         minHeight: '100vh',
         display: 'flex',
+        flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        background: 'linear-gradient(135deg, #d78484ff 0%, #d5acacff 100%)',
-        p: 3,
-        position: 'relative',
-        overflow: 'hidden'
+        textAlign: 'center'
       }}
     >
-      {/* Efeito de bolhas decorativas */}
-      <Box sx={{
-        position: 'absolute',
-        top: '-50px',
-        right: '-50px',
-        width: '300px',
-        height: '300px',
-        borderRadius: '50%',
-        backgroundColor: 'rgba(255, 255, 255, 0.2)',
-        zIndex: 0
-      }} />
-      
-      <Box sx={{
-        position: 'absolute',
-        bottom: '-100px',
-        left: '-100px',
-        width: '400px',
-        height: '400px',
-        borderRadius: '50%',
-        backgroundColor: 'rgba(255, 255, 255, 0.15)',
-        zIndex: 0
-      }} />
+      <Box sx={{ color: 'primary.main', mb: 3 }}>
+        <ErrorOutline sx={{ fontSize: 80 }} />
+      </Box>
+
+      <Typography variant="h3" component="h1" gutterBottom sx={{ fontWeight: 700 }}>
+        404 - Página Não Encontrada
+      </Typography>
+
+      <Typography variant="h6" component="p" color="text.secondary" paragraph>
+        A página que você está procurando não existe ou foi removida.
+      </Typography>
 
       <Stack
-        direction={isMobile ? 'column' : 'row'}
+        direction="column"
         alignItems="center"
-        justifyContent="center"
-        spacing={isMobile ? 4 : 8}
-        sx={{
-          maxWidth: 1200,
-          width: '100%',
-          zIndex: 1,
-          textAlign: 'center'
-        }}
+        spacing={2}
+        sx={{ mt: 4 }}
       >
-
-        <Stack spacing={3} sx={{ maxWidth: 500 }}>
-          <Typography 
-            variant="h3"
-            sx={{ 
-              fontWeight: 'bold',
-              color: 'primary.main',
-              background: 'linear-gradient(45deg, #5b5b5bff, #414141ff)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent'
-            }}
-          >
-            Oops! 404
-          </Typography>
-          
-          <Typography 
-            variant="h5"
-            sx={{ 
-              color: 'text.primary',
-              fontWeight: 500
-            }}
-          >
-            Página não encontrada
-          </Typography>
-          
-          <Typography 
-            variant="body1"
-            sx={{ 
-              color: 'text.secondary',
-              mb: 3
-            }}
-          >
-            A página que você está procurando não existe ou foi movida.
-          </Typography>
-          
-          <Button
-            variant="contained"
-            size="large"
-            onClick={() => navigate('/')}
-            sx={{
-              px: 4,
-              py: 1.5,
-              fontWeight: 'bold',
-              fontSize: '1rem',
-              borderRadius: '12px',
-              textTransform: 'none',
-              background: 'linear-gradient(45deg, #1976d2, #00bcd4)',
-              boxShadow: 'none',
-              '&:hover': {
-                boxShadow: '0 4px 12px rgba(25, 118, 210, 0.3)',
-                background: 'linear-gradient(45deg, #1565c0, #0097a7)'
-              }
-            }}
-          >
-            Voltar para a página inicial
-          </Button>
-        </Stack>
+        <Button
+          variant="contained"
+          size="large"
+          onClick={() => navigate('/blog')}
+        >
+          Ir para o Blog
+        </Button>
+        <Button
+          variant="text"
+          size="large"
+          onClick={() => navigate('/')}
+          sx={{ color: 'text.secondary' }}
+        >
+          Voltar para a Página Inicial
+        </Button>
       </Stack>
-    </Box>
+    </Container>
   );
 };
 

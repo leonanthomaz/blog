@@ -13,20 +13,18 @@ import { blogPosts } from '../../data/blogPosts';
 import CategoriesSidebar from '../../components/CategoriesSidebar';
 import BlogCard from '../../components/BlogCard';
 import { useScrollToTop } from '../../hooks/useScrollToTop';
+import Navbar from '../../components/Navbar';
 
 const BlogPage = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
-  // Usa o hook para scrollar para o topo
   useScrollToTop();
 
-  // Extrair categorias únicas
   const categories = Array.from(new Set(blogPosts.map(post => post.category)));
 
-  // Filtrar posts baseado na pesquisa e categoria
   const filteredPosts = blogPosts.filter(post => {
-    const matchesSearch = searchTerm === '' || 
+    const matchesSearch = !searchTerm ||
       post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
       post.subtitle.toLowerCase().includes(searchTerm.toLowerCase()) ||
       post.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()));
@@ -37,6 +35,8 @@ const BlogPage = () => {
   });
 
   return (
+    <>
+    <Navbar/>
     <Container maxWidth="lg" sx={{ py: 4, minHeight: '100vh' }}>
       <Typography variant="h3" component="h1" gutterBottom>
         Blog & Artigos
@@ -71,9 +71,11 @@ const BlogPage = () => {
         </Box>
         
         <Box sx={{ width: { xs: '100%', md: '75%' } }}>
-          <Typography variant="h6" gutterBottom>
-            {filteredPosts.length} artigo{filteredPosts.length !== 1 ? 's' : ''} encontrado{filteredPosts.length !== 1 ? 's' : ''}
-          </Typography>
+          <Box mb={3}>
+            <Typography variant="h6">
+              {filteredPosts.length} artigo{filteredPosts.length !== 1 ? 's' : ''} encontrado{filteredPosts.length !== 1 ? 's' : ''}
+            </Typography>
+          </Box>
           
           {filteredPosts.length === 0 ? (
             <Box textAlign="center" py={4}>
@@ -93,15 +95,14 @@ const BlogPage = () => {
               }}
             >
               {filteredPosts.map((post) => (
-                <Box key={post.id}>
-                  <BlogCard post={post} />
-                </Box>
+                <BlogCard key={post.id} post={post} />
               ))}
             </Box>
           )}
         </Box>
       </Stack>
     </Container>
+    </>
   );
 };
 

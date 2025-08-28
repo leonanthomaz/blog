@@ -4,7 +4,7 @@ import { alpha } from '@mui/material/styles';
 
 export const GlobalCss = () => (
   <GlobalStyles
-    styles={() => ({
+    styles={(theme) => ({
       '*, *::before, *::after': {
         boxSizing: 'border-box',
       },
@@ -14,25 +14,27 @@ export const GlobalCss = () => (
       body: {
         margin: 0,
         padding: 0,
-        backgroundColor: '#fafafa',
+        backgroundColor: theme.palette.background.default,
         fontFamily: "'Inter', sans-serif",
         WebkitFontSmoothing: 'antialiased',
         MozOsxFontSmoothing: 'grayscale',
         lineHeight: 1.6,
-        color: '#1f2937',
+        color: theme.palette.text.primary,
       },
       a: {
         textDecoration: 'none',
-        color: 'inherit',
-        transition: 'color 0.2s ease',
+        color: theme.palette.primary.main,
+        transition: 'all 0.2s ease',
+        fontWeight: 500,
         '&:hover': {
-          color: '#2563eb',
+          color: theme.palette.primary.dark,
         },
       },
       ul: {
         margin: 0,
         padding: 0,
         listStyle: 'none',
+        listStylePosition: 'inside',
       },
       img: {
         maxWidth: '100%',
@@ -43,37 +45,38 @@ export const GlobalCss = () => (
         marginTop: '2rem',
         marginBottom: '1rem',
         fontWeight: 600,
+        lineHeight: 1.2,
       },
       'p, li': {
         marginBottom: '1rem',
       },
-      'blockquote': {
-        borderLeft: '4px solid #2563eb',
+      blockquote: {
+        borderLeft: `4px solid ${theme.palette.primary.main}`,
         paddingLeft: '1.5rem',
         marginLeft: 0,
         fontStyle: 'italic',
-        color: '#6b7280',
-        backgroundColor: alpha('#2563eb', 0.03),
+        color: theme.palette.text.secondary,
+        backgroundColor: alpha(theme.palette.primary.main, 0.03),
         padding: '1.5rem',
         borderRadius: '0 12px 12px 0',
         margin: '2rem 0',
       },
       '::selection': {
-        backgroundColor: alpha('#2563eb', 0.2),
-        color: '#1f2937',
+        backgroundColor: alpha(theme.palette.primary.main, 0.15),
+        color: theme.palette.text.primary,
       },
       '::-webkit-scrollbar': {
         width: '8px',
       },
       '::-webkit-scrollbar-track': {
-        background: '#f1f1f1',
+        background: '#f1f3f5',
         borderRadius: '4px',
       },
       '::-webkit-scrollbar-thumb': {
-        background: '#c1c1c1',
+        background: '#ced4da',
         borderRadius: '4px',
         '&:hover': {
-          background: '#a8a8a8',
+          background: '#adb5bd',
         },
       },
       '.syntax-highlighter': {
@@ -81,16 +84,19 @@ export const GlobalCss = () => (
         padding: '1.5rem !important',
         margin: '1.5rem 0 !important',
         fontSize: '0.9rem !important',
+        backgroundColor: `${theme.palette.background.default} !important`,
+        border: `1px solid ${alpha(theme.palette.primary.main, 0.1)} !important`,
       },
       '.blog-content': {
         '& img': {
           borderRadius: '12px',
-          boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
+          boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.08)',
           margin: '2rem 0',
+          border: `1px solid ${alpha('#e9ecef', 0.8)}`,
         },
         '& h2': {
           paddingBottom: '0.5rem',
-          borderBottom: '2px solid #e5e7eb',
+          borderBottom: `2px solid ${alpha('#e9ecef', 0.8)}`,
           marginTop: '3rem',
         },
         '& h3': {
@@ -109,18 +115,19 @@ export const GlobalCss = () => (
           margin: '1.5rem 0',
           borderRadius: '8px',
           overflow: 'hidden',
-          boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.1)',
+          boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.05)',
+          border: `1px solid ${alpha('#e9ecef', 0.8)}`,
         },
         '& th, & td': {
           padding: '0.75rem',
-          border: '1px solid #e5e7eb',
+          border: `1px solid ${alpha('#e9ecef', 0.8)}`,
         },
         '& th': {
-          backgroundColor: '#f9fafb',
+          backgroundColor: '#f8f9fa',
           fontWeight: 600,
         },
         '& tr:nth-of-type(even)': {
-          backgroundColor: '#f9fafb',
+          backgroundColor: '#f8f9fa',
         },
       },
     })}
