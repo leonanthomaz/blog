@@ -12,7 +12,7 @@ export const App: React.FC = () => {
 
     const timeout = setTimeout(() => {
       setLoading(false);
-    }, 800);
+    }, 1500);
 
     return () => clearTimeout(timeout);
   }, []);
