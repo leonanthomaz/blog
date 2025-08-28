@@ -41,7 +41,7 @@ const BlogCard = ({ post }: BlogCardProps) => {
           {post.title}
         </Typography>
         <Typography variant="body2" color="text.secondary" paragraph>
-          {post.excerpt}
+          {post.subtitle}
         </Typography>
         <Box sx={{ display: 'flex', alignItems: 'center', mt: 'auto', pt: 2 }}>
           <Box sx={{ display: 'flex', alignItems: 'center', mr: 2 }}>

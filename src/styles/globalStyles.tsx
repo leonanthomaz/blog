@@ -4,7 +4,7 @@ import { alpha } from '@mui/material/styles';
 
 export const GlobalCss = () => (
   <GlobalStyles
-    styles={(theme) => ({
+    styles={() => ({
       '*, *::before, *::after': {
         boxSizing: 'border-box',
       },

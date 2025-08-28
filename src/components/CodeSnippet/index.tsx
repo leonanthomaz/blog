@@ -3,7 +3,6 @@ import { materialDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { IconButton, Box } from '@mui/material';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import { useSnackbar } from 'notistack';
-import { useState } from 'react';
 
 interface CodeSnippetProps {
   code: string;
@@ -12,14 +11,11 @@ interface CodeSnippetProps {
 
 const CodeSnippet = ({ code, language }: CodeSnippetProps) => {
   const { enqueueSnackbar } = useSnackbar();
-  const [isCopied, setIsCopied] = useState(false);
 
   const handleCopy = async () => {
     try {
       await navigator.clipboard.writeText(code);
-      setIsCopied(true);
       enqueueSnackbar('Código copiado!', { variant: 'success' });
-      setTimeout(() => setIsCopied(false), 2000);
     } catch (err) {
       enqueueSnackbar('Falha ao copiar código', { variant: 'error' });
     }
