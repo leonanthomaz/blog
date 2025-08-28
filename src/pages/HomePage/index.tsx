@@ -6,11 +6,9 @@ import {
   Container,
   Avatar,
   IconButton,
-  Paper,
   useTheme,
   useMediaQuery,
   Stack,
-  Chip,
 } from '@mui/material';
 import {
   Article,
@@ -21,13 +19,11 @@ import {
   School,
   Code,
   ArrowDownward,
-  CalendarToday,
-  Schedule,
 } from '@mui/icons-material';
 import { Link as ScrollLink } from 'react-scroll';
 import { useNavigate } from 'react-router-dom';
 import minhaFoto from '@/assets/img/foto-leonan.jpg';
-import { blogPosts, type BlogPost } from '../../data/blogPosts';
+import { blogPosts } from '../../data/blogPosts';
 import Footer from '../../components/Footer';
 import BlogCard from '../../components/BlogCard'; // Importa o BlogCard
 
