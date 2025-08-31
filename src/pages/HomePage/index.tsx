@@ -243,7 +243,7 @@ const HomePage = () => {
 
               <Stack spacing={3}>
                 <Typography variant="body1" sx={{ fontSize: '1.1rem', lineHeight: 1.8, color: 'text.primary' }}>
-                  Sou um desenvolvedor Python apaixonado por compartilhar conhecimento e ajudar
+                  Sou um Desenvolvedor Python apaixonado por compartilhar conhecimento e ajudar
                   outros desenvolvedores a crescerem em sua jornada. Com experiência em projetos
                   desafiadores, acredito no poder da comunidade e do aprendizado contínuo.
                 </Typography>
@@ -274,14 +274,14 @@ const HomePage = () => {
                     <Box sx={{ display: 'flex', alignItems: 'center' }}>
                       <Code sx={{ color: 'primary.main', mr: 1 }} />
                       <Typography variant="body1" sx={{ fontWeight: 'medium', color: 'text.primary' }}>
-                        Open Source
+                        Engenheiro de Software
                       </Typography>
                     </Box>
 
                     <Box sx={{ display: 'flex', alignItems: 'center' }}>
                       <Article sx={{ color: 'primary.main', mr: 1 }} />
                       <Typography variant="body1" sx={{ fontWeight: 'medium', color: 'text.primary' }}>
-                        Technical Writer
+                        Escritor Técnico
                       </Typography>
                     </Box>
                   </Stack>

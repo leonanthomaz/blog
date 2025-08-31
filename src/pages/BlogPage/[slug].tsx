@@ -15,6 +15,7 @@ import { calculateReadTime } from '../../utils/readTime'; // Importa a nova funÃ
 import { useScrollToTop } from '../../hooks/useScrollToTop';
 import MarkdownContent from './MarkdownContent';
 import Navbar from '../../components/Navbar';
+import StructuredContent from '../../components/StructuredContent';
 
 const BlogPostPage = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -103,7 +104,7 @@ const BlogPostPage = () => {
           </Box>
         )}
 
-        <MarkdownContent content={post.content} />
+        <StructuredContent content={post.content} />
 
         <Box sx={{ mt: 4 }}>
           <Typography variant="h6" gutterBottom>
