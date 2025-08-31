@@ -1,7 +1,7 @@
 // src/components/StructuredContent.tsx
 import { Box, Typography } from '@mui/material';
 import { parseMarkdown, type MarkdownElement } from '../../utils/markdownParser';
-import CodeSnippet from '../CodeSnippet';
+import CodeSnippet from '../Posts/CodeSnippet';
 import type { JSX } from 'react';
 
 interface StructuredContentProps {

@@ -13,9 +13,8 @@ import NotFoundPage from '../NotFoundPage';
 import { blogPosts } from '../../data/blogPosts';
 import { calculateReadTime } from '../../utils/readTime'; // Importa a nova função
 import { useScrollToTop } from '../../hooks/useScrollToTop';
-import MarkdownContent from './MarkdownContent';
 import Navbar from '../../components/Navbar';
-import StructuredContent from '../../components/StructuredContent';
+import StructuredContent from '../../components/Posts/StructuredContent';
 
 const BlogPostPage = () => {
   const { slug } = useParams<{ slug: string }>();
