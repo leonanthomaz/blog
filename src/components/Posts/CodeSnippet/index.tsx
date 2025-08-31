@@ -9,6 +9,11 @@ interface CodeSnippetProps {
   language: string;
 }
 
+const myCustomTheme = {
+  ...materialDark,
+  comment: { color: '#bdbdbde6'},
+};
+
 const CodeSnippet = ({ code, language }: CodeSnippetProps) => {
   const { enqueueSnackbar } = useSnackbar();
 
@@ -30,9 +35,9 @@ const CodeSnippet = ({ code, language }: CodeSnippetProps) => {
           right: 8,
           top: 8,
           zIndex: 10,
-          backgroundColor: 'rgba(255, 255, 255, 0.1)',
+          backgroundColor: 'rgba(189, 189, 189, 0.9)',
           '&:hover': {
-            backgroundColor: 'rgba(255, 255, 255, 0.2)'
+            backgroundColor: 'rgba(202, 202, 202, 0.53)'
           }
         }}
         size="small"
@@ -41,9 +46,9 @@ const CodeSnippet = ({ code, language }: CodeSnippetProps) => {
       </IconButton>
       <SyntaxHighlighter
         language={language}
-        style={materialDark}
+        style={myCustomTheme}
         showLineNumbers
-        customStyle={{ borderRadius: '4px', padding: '16px' }}
+        customStyle={{ borderRadius: '4px', padding: '16px'}}
       >
         {code}
       </SyntaxHighlighter>
