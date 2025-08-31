@@ -49,7 +49,7 @@ blog/
 ### Clone o repositório:
 
 ```
-git clone <link-do-repo>
+git clone https://github.com/leonanthomaz/blog
 cd blog
 ```
 
