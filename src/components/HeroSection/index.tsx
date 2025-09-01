@@ -1,5 +1,5 @@
 import { Box, Typography, Button, Stack, IconButton, Container, useMediaQuery, useTheme } from '@mui/material';
-import { Article, GitHub, LinkedIn, Email, ArrowDownward } from '@mui/icons-material';
+import { Article, GitHub, LinkedIn, Email, ArrowDownward, Instagram } from '@mui/icons-material';
 import { Link as ScrollLink } from 'react-scroll';
 import { useNavigate } from 'react-router-dom';
 
@@ -18,7 +18,7 @@ const HeroSection = () => {
         justifyContent: 'center',
         position: 'relative',
         backgroundImage:
-          'linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80)',
+          'linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90oy1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundAttachment: 'fixed',
@@ -66,46 +66,70 @@ const HeroSection = () => {
           {/* Redes Sociais */}
           <Stack direction="row" spacing={2}>
             <IconButton
-              color="inherit"
+              component="a"
+              href="https://github.com/leonanthomaz"
+              target="_blank"
+              rel="noopener noreferrer"
               sx={{
-                border: '1px solid',
-                borderColor: 'rgba(255,255,255,0.3)',
+                border: '1px solid rgba(65, 65, 65, 0.81)',
                 color: 'white',
-                '&:hover': {
-                  backgroundColor: 'rgba(255,255,255,0.1)',
-                  transform: 'translateY(-2px)',
-                },
                 transition: 'all 0.3s ease',
+                '&:hover': {
+                  backgroundColor: 'rgba(252, 252, 252, 1)',
+                  borderColor: 'white',
+                },
               }}
             >
               <GitHub />
             </IconButton>
+
             <IconButton
-              color="inherit"
+              component="a"
+              href="https://www.linkedin.com/in/leonanthomaz"
+              target="_blank"
+              rel="noopener noreferrer"
               sx={{
-                border: '1px solid',
-                borderColor: 'rgba(255,255,255,0.3)',
+                border: '1px solid rgba(65, 65, 65, 0.81)',
                 color: 'white',
-                '&:hover': {
-                  backgroundColor: 'rgba(255,255,255,0.1)',
-                  transform: 'translateY(-2px)',
-                },
                 transition: 'all 0.3s ease',
+                '&:hover': {
+                  backgroundColor: 'rgba(252, 252, 252, 1)',
+                  borderColor: 'white',
+                },
               }}
             >
               <LinkedIn />
             </IconButton>
+
             <IconButton
-              color="inherit"
+              component="a"
+              href="https://www.instagram.com/leonan.thomaz"
+              target="_blank"
+              rel="noopener noreferrer"
               sx={{
-                border: '1px solid',
-                borderColor: 'rgba(255,255,255,0.3)',
+                border: '1px solid rgba(65, 65, 65, 0.81)',
                 color: 'white',
-                '&:hover': {
-                  backgroundColor: 'rgba(255,255,255,0.1)',
-                  transform: 'translateY(-2px)',
-                },
                 transition: 'all 0.3s ease',
+                '&:hover': {
+                  backgroundColor: 'rgba(252, 252, 252, 1)',
+                  borderColor: 'white',
+                },
+              }}
+            >
+              <Instagram />
+            </IconButton>
+
+            <IconButton
+              component="a"
+              href="mailto:leonan.thomaz@gmail.com"
+              sx={{
+                border: '1px solid rgba(65, 65, 65, 0.81)',
+                color: 'white',
+                transition: 'all 0.3s ease',
+                '&:hover': {
+                  backgroundColor: 'rgba(252, 252, 252, 1)',
+                  borderColor: 'white',
+                },
               }}
             >
               <Email />
@@ -127,7 +151,6 @@ const HeroSection = () => {
               backgroundColor: theme.palette.primary.main,
               '&:hover': {
                 backgroundColor: theme.palette.primary.dark,
-                transform: 'translateY(-2px)',
                 boxShadow: 4,
               },
               transition: 'all 0.3s ease',
