@@ -30,7 +30,7 @@ const Footer = () => {
               Leonan Thomaz
             </Typography>
             <Typography variant="body2" sx={{ opacity: 0.8 }} color="text.secondary">
-              Desenvolvedor Python & Mentor
+              Desenvolvedor Python
             </Typography>
             <Typography variant="body2" sx={{ opacity: 0.7 }} color="text.secondary">
               Compartilhando conhecimento e ajudando a comunidade de desenvolvedores.
