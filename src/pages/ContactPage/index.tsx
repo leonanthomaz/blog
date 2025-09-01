@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { Box, Typography, TextField, Button, CircularProgress, Snackbar, Alert, Container } from '@mui/material';
 import emailjs from 'emailjs-com';
+import Layout from '../../components/Layout';
 
 const ContactPage: React.FC = () => {
   const form = useRef<HTMLFormElement>(null);
@@ -53,25 +54,27 @@ const ContactPage: React.FC = () => {
   };
 
   return (
-    <Container maxWidth="md" sx={{ py: 8 }}>
-      <Typography variant="h3" gutterBottom>Contato</Typography>
+    <Layout>
+        <Container maxWidth="md" sx={{ py: 8 }}>
+        <Typography variant="h3" gutterBottom>Contato</Typography>
 
-      <Box component="form" ref={form} onSubmit={sendEmail} sx={{ display:'flex', flexDirection:'column', gap:3 }}>
-        <TextField label="Nome" name="name" inputRef={nameRef} required fullWidth />
-        <TextField label="Telefone (com DDD)" name="telephone" inputRef={telRef} required fullWidth />
-        <TextField label="Mensagem" name="message" inputRef={msgRef} required multiline rows={4} fullWidth />
+        <Box component="form" ref={form} onSubmit={sendEmail} sx={{ display:'flex', flexDirection:'column', gap:3 }}>
+            <TextField label="Nome" name="name" inputRef={nameRef} required fullWidth />
+            <TextField label="Telefone (com DDD)" name="telephone" inputRef={telRef} required fullWidth />
+            <TextField label="Mensagem" name="message" inputRef={msgRef} required multiline rows={4} fullWidth />
 
-        <Button type="submit" variant="contained" color="primary" disabled={loading}>
-          {loading ? <CircularProgress size={24} color="inherit"/> : 'Enviar Mensagem'}
-        </Button>
-      </Box>
+            <Button type="submit" variant="contained" color="primary" disabled={loading}>
+            {loading ? <CircularProgress size={24} color="inherit"/> : 'Enviar Mensagem'}
+            </Button>
+        </Box>
 
-      <Snackbar open={snack.open} autoHideDuration={5000} onClose={handleClose} anchorOrigin={{vertical:'top', horizontal:'right'}}>
-        <Alert onClose={handleClose} severity={snack.severity} sx={{ width: '100%' }}>
-          {snack.message}
-        </Alert>
-      </Snackbar>
-    </Container>
+        <Snackbar open={snack.open} autoHideDuration={5000} onClose={handleClose} anchorOrigin={{vertical:'top', horizontal:'right'}}>
+            <Alert onClose={handleClose} severity={snack.severity} sx={{ width: '100%' }}>
+            {snack.message}
+            </Alert>
+        </Snackbar>
+        </Container>
+    </Layout>
   );
 };
 
