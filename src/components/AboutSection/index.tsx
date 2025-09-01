@@ -1,5 +1,5 @@
 import { Box, Typography, Button, Container, Avatar, Stack, useTheme, useMediaQuery } from '@mui/material';
-import { Work, School, Code, Article } from '@mui/icons-material';
+import { Work, Code } from '@mui/icons-material';
 import minhaFoto from '@/assets/img/foto-leonan.jpg';
 
 const AboutSection = () => {
@@ -89,16 +89,6 @@ const AboutSection = () => {
                       Desenvolvedor Python
                     </Typography>
                   </Box>
-
-                  <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                    <School sx={{ color: 'primary.main', mr: 1 }} />
-                    <Typography
-                      variant="body1"
-                      sx={{ fontWeight: 'medium', color: 'text.primary' }}
-                    >
-                      Mentor & Educador
-                    </Typography>
-                  </Box>
                 </Stack>
 
                 <Stack spacing={2} sx={{ minWidth: 150 }}>
@@ -109,16 +99,6 @@ const AboutSection = () => {
                       sx={{ fontWeight: 'medium', color: 'text.primary' }}
                     >
                       Engenheiro de Software
-                    </Typography>
-                  </Box>
-
-                  <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                    <Article sx={{ color: 'primary.main', mr: 1 }} />
-                    <Typography
-                      variant="body1"
-                      sx={{ fontWeight: 'medium', color: 'text.primary' }}
-                    >
-                      Escritor Técnico
                     </Typography>
                   </Box>
                 </Stack>
