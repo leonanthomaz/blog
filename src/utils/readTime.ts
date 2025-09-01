@@ -7,7 +7,7 @@
 export const calculateReadTime = (content: string): string => {
   const wordsPerMinute = 230; // Velocidade de leitura média em palavras por minuto
   const text = content.replace(/```[\s\S]*?```/g, ''); // Ignora blocos de código
-  const wordCount = text.trim().split(/\s+/).length;
-  const readTime = Math.ceil(wordCount / wordsPerMinute);
+  const wordCount = text.trim().split(/\s+/).length; // Contagem do tamanho da palavra
+  const readTime = Math.ceil(wordCount / wordsPerMinute); // Calculo de tempo de leitura
   return `${readTime} min de leitura`;
 };

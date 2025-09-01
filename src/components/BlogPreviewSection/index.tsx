@@ -8,7 +8,6 @@ import BlogCard from '../BlogCard';
 const BlogPreviewSection = () => {
   const navigate = useNavigate();
   
-  // Pegar artigos em destaque (com featured: true) ou os 3 mais recentes
   const featuredPosts = blogPosts.filter((post) => post.featured).slice(0, 3);
   const displayPosts = featuredPosts.length > 0 ? featuredPosts : blogPosts.slice(0, 3);
 

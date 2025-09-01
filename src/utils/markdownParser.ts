@@ -29,7 +29,7 @@ export function parseMarkdown(content: string): MarkdownElement[] {
       continue;
     }
 
-    // Heading
+    // Cabeçalho
     const headingMatch = line.match(/^(#{1,6})\s+(.*)$/);
     if (headingMatch) {
       flushList();
@@ -37,7 +37,7 @@ export function parseMarkdown(content: string): MarkdownElement[] {
       continue;
     }
 
-    // Code block
+    // Bloco de código
     if (line.startsWith('```')) {
       flushList();
       const language = line.slice(3).trim() || 'text';
@@ -51,7 +51,7 @@ export function parseMarkdown(content: string): MarkdownElement[] {
       continue;
     }
 
-    // Image
+    // Imagem
     const imgMatch = line.match(/!\[(.*?)\]\((.*?)\)/);
     if (imgMatch) {
       flushList();
@@ -59,7 +59,7 @@ export function parseMarkdown(content: string): MarkdownElement[] {
       continue;
     }
 
-    // List (ordered ou unordered)
+    // Lista (ordered ou unordered)
     const ulMatch = line.match(/^[-*]\s+(.*)$/);
     const olMatch = line.match(/^\d+\.\s+(.*)$/);
 
@@ -74,7 +74,7 @@ export function parseMarkdown(content: string): MarkdownElement[] {
       continue;
     }
 
-    // Paragraph
+    // Paragrafo
     flushList();
     elements.push({ type: 'paragraph', text: line });
   }
