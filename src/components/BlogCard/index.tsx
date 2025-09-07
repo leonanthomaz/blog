@@ -13,7 +13,7 @@ const BlogCard = ({ post }: BlogCardProps) => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate(`/blog/${post.slug}`);
+    navigate(`/article/${post.slug}`);
   };
 
   return (

@@ -62,7 +62,7 @@ const BlogPreviewSection = () => {
             color="primary"
             size="large"
             endIcon={<Article />}
-            onClick={() => navigate('/blog')}
+            onClick={() => navigate('/articles')}
             sx={{
               px: 6,
               py: 1.5,

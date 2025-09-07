@@ -11,11 +11,11 @@ const AppRouter: React.FC = () => {
   return (
     <Router>
       <Routes>
-        <Route path='/' element={<HomePage/>} />
+        <Route path='/blog' element={<HomePage/>} />
         <Route path='/sobre' element={<AboutPage/>} />
         <Route path='/contato' element={<ContactPage/>} />
-        <Route path="/blog" element={<BlogPage />} />
-        <Route path="/blog/:slug" element={<BlogPostPage />} />
+        <Route path="/articles" element={<BlogPage />} />
+        <Route path="/article/:slug" element={<BlogPostPage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>

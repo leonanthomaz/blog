@@ -35,7 +35,7 @@ const BlogPostPage = () => {
       <Container maxWidth="md" sx={{ py: 4, minHeight: '100vh' }}>
         <Box sx={{ mb: 4, display: 'flex', alignItems: 'center', gap: 2 }}>
           <Button
-            onClick={() => navigate('/blog')}
+            onClick={() => navigate('/articles')}
             startIcon={<ArrowBack />}
             sx={{
               textTransform: 'none',

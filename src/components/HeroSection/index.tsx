@@ -141,7 +141,7 @@ const HeroSection = () => {
             color="primary"
             size="large"
             endIcon={<Article />}
-            onClick={() => navigate('/blog')}
+            onClick={() => navigate('/articles')}
             sx={{
               px: 4,
               py: 1.5,
