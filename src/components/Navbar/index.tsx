@@ -22,7 +22,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import { useTheme } from '@mui/material/styles';
 
 const navItems = [
-  { label: 'Início', path: '/blog' },
+  { label: 'Início', path: '/' },
   { label: 'Blog', path: '/articles' },
   { label: 'Sobre', path: '/sobre' },
   { label: 'Contato', path: '/contato' },
